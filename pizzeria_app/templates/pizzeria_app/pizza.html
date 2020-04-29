@@ -19,9 +19,8 @@
     <ul>
         {% for comment in pizza_with_comments %}
         <li>
-            <p>{{ comment.date_added|date:'M d, Y H:i' }}</p>
-            <p>{{ comment.comment_author|linebreaks }}</p>
-            <p>{{ comment.comment_text|linebreaks }}</p>
+            <p>{{ comment.comment_text }}</p>
+            <p>{{ comment.comment_author }},&nbsp;{{ comment.date_added|date:'M d, Y' }}</p>
         </li>
         {% empty %}
         <li>There are no comments for this pizza yet</li>
