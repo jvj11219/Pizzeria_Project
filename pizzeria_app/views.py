@@ -28,7 +28,7 @@ def new_comment(request, pizza_id):
         form = CommentForm(data=request.POST)
         if form.is_valid():
             new_comment = form.save(commit=False)
-            new_comment.pizza = pizza
+            new_comment.pizza_name = pizza
             new_comment.save()
             form.save()
             return redirect('pizzeria_app:pizza', pizza_id=pizza_id)

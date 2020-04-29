@@ -22,4 +22,4 @@ class Comment(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.comment_text
+        return f"{self.comment_text[:50]}..."
