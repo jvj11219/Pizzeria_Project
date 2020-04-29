@@ -14,4 +14,17 @@
         {% endfor %}
     </ul>
 
+    <p>Comments:</p>
+
+    <ul>
+        {% for comment in pizza_with_comments %}
+        <li>
+            <p>{{ comment.date_added|date:'M d, Y H:i' }}</p>
+            <p>{{ comment.comment_text|linebreaks }}</p>
+        </li>
+        {% empty %}
+        <li>There are no comments for this pizza yet</li>
+        {% endfor %}
+    </ul>
+
 {% endblock content %}
