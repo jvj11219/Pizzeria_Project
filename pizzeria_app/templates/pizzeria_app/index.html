@@ -10,7 +10,14 @@
     <p class="lead">"I go there every weekend" - Other Random Person</p>
     <p class="lead">"Best service around!" - Another Random Person</p>
     <p><img src="http://brotherspizzeriahouston.com/wp-content/uploads/2017/08/bkrd2.jpg" class="img-fluid" alt="Responsive image"></p>
-    <a class="btn btn-lg btn-primary" href="{% url 'pizzeria_app:pizzas' %}" role="button">View Menu &raquo;</a>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <a class="btn btn-lg btn-primary" href="{% url 'pizzeria_app:pizzas' %}" role="button">View Menu &raquo;</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock page_header %}
