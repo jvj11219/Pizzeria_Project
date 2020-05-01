@@ -1,34 +1,41 @@
 {% extends "pizzeria_app/base.html" %}
 
+{% block page_header %} 
+    <h3>{{ pizza }} Pizza:</h3>
+{% endblock page_header %}
+
 {% block content %}
 
-    <p>Pizza: {{ pizza }}</p>
-
-    <ul>
+<div class="card mb-3">
+    <h4 class="card-header">Toppings:</h4>
+    
+    <div class="card-body">
         {% for topping in pizza_with_toppings %}
-        <li>
-            <p>{{ topping.topping_name|linebreaks }}</p>
-        </li>
+            <li><h5>{{ topping.topping_name|linebreaks }}</h5></li>
         {% empty %}
-        <li>There are no toppings for this pizza yet</li>
+            <li><h5>{There are no toppings for this pizza yet</h5></li>
         {% endfor %}
-    </ul>
+    </div>
+</div>
 
-    <p>Comments:</p>
+<hr class="my-4">
 
-    <ul>
-        {% for comment in pizza_with_comments %}
-        <li>
-            <p>{{ comment.comment_text }}</p>
-            <p>{{ comment.comment_author }},&nbsp;{{ comment.date_added|date:'M d, Y' }}</p>
-        </li>
-        {% empty %}
-        <li>There are no comments for this pizza yet</li>
-        {% endfor %}
-    </ul>
+<h3>Comments:</h3>
 
-    <p>
-        <a href="{% url 'pizzeria_app:new_comment' pizza.id %}">Post New Comment</a>
-    </p>
+{% for comment in pizza_with_comments %}
+<div class="card mb-3">
+    <h6 class="card-header">{{ comment.comment_author }},&nbsp;{{ comment.date_added|date:'M d, Y' }}</h6>
+    
+    <div class="card-body">
+        <h5>{{ comment.comment_text }}</h5>
+    </div>
+</div>
+{% empty %}
+    <h6>There are no comments for this pizza yet</h6>
+{% endfor %}
+    
+<p>
+    <a class="btn btn-primary btn-lg enabled" role="button" href="{% url 'pizzeria_app:new_comment' pizza.id %}" role="button">Post Comment</a>
+</p>
 
 {% endblock content %}
