@@ -1,7 +1,16 @@
 {% extends "pizzeria_app/base.html" %}
 
-{% block content %}
-<p>
-    The Pizzeria Project helps you keep track of what pizzas you make, what toppings are on each one, and what people think about them.
-</p>
-{% endblock content %}
+{% block page_header %}
+
+<div class="jumbotron">
+    <h1 class="display-3">Welcome to Josh's Pizzeria</h1>
+    <p class="display-4">Rated #1 in Houston by PaperCity Magazine</p>
+    <hr class="my-4">
+    <p class="lead">"Their pizza is the best" - Random Person</p>
+    <p class="lead">"I go there every weekend" - Other Random Person</p>
+    <p class="lead">"Best service around!" - Another Random Person</p>
+    <p><img src="http://brotherspizzeriahouston.com/wp-content/uploads/2017/08/bkrd2.jpg" class="img-fluid" alt="Responsive image"></p>
+    <a class="btn btn-lg btn-primary" href="{% url 'pizzeria_app:pizzas' %}" role="button">View Menu &raquo;</a>
+</div>
+
+{% endblock page_header %}
