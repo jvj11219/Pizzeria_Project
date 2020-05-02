@@ -25,7 +25,7 @@ SECRET_KEY = ')80otg^d&0yq76(gm(ac8^-5m!$q9=xw-r=2udez))f)z612t%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [pizzeria-python-project.herokuapp.com]
 
 
 # Application definition
