@@ -33,9 +33,11 @@
 {% empty %}
     <h6>There are no comments for this pizza yet</h6>
 {% endfor %}
-    
-<p>
-    <a class="btn btn-primary btn-lg enabled" role="button" href="{% url 'pizzeria_app:new_comment' pizza.id %}" role="button">Post Comment</a>
-</p>
+
+<div class="row">
+    <div class="col-sm-3"><a class="btn btn-primary btn-lg enabled" role="button" href="{% url 'pizzeria_app:new_comment' pizza.id %}" role="button">Post Comment</a></div>
+    <div class="col-sm-6"></div>
+    <div class="col-sm-3"><a class="btn btn-primary btn-lg enabled float-right" role="button" href="{% url 'pizzeria_app:pizzas' %}" role="button">Back</a></div>
+</div>
 
 {% endblock content %}
