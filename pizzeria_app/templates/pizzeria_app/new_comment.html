@@ -1,15 +1,21 @@
 {% extends "pizzeria_app/base.html" %}
 
-    {% block content %}
+    {% load bootstrap4 %}
 
-    <p><a href="{% url 'pizzeria_app:pizza' pizza.id %}">{{ pizza }}</a></p>
+    {% block page_header %}
+        <h2>Post a Comment for <a href="{% url 'pizzeria_app:pizza' pizza.id %}">{{ pizza }} Pizza:</a></h2>
+    {% endblock page_header %}
+
+    {% block content %}
 
     <p>Add a New Comment:</p>
 
-    <form action="{% url 'pizzeria_app:new_comment' pizza.id %}" method='POST'>
+    <form action="{% url 'pizzeria_app:new_comment' pizza.id %}" method='POST' class="form">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button name="submit">Post Comment</button>
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button class="btn btn-lg btn-primary" name="submit">Post Comment</button>
+        {% endbuttons %}
     </form>
 
     {% endblock content %}
