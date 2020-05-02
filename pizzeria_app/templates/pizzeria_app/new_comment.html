@@ -14,8 +14,14 @@
         {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}
-            <button class="btn btn-lg btn-primary" name="submit">Post Comment</button>
+            <!-- <button class="btn btn-lg btn-primary" name="submit">Post Comment</button> -->
+            <div class="row">
+                <div class="col-sm-3"><button class="btn btn-lg btn-primary" name="submit">Post Comment</button></div>
+                <div class="col-sm-6"></div>
+                <div class="col-sm-3"><a class="btn btn-primary btn-lg enabled float-right" role="button" href="{% url 'pizzeria_app:pizza' pizza.id %}" role="button">Cancel</a></div>
+            </div>
         {% endbuttons %}
     </form>
 
     {% endblock content %}
+
